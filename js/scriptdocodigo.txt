@@ -1,0 +1,54 @@
+
+<script>
+$(function() {
+    $('#usuario').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+    $('#senha').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+    $('#codigod').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^0-9]/g,'') ); }
+);
+    $('#fantasial').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+
+     $('#propriet').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+    $('#usuarionome').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+
+     $('#senhareg').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+    $('#senhaconf').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+$('#tele').mask("(99) 9999-9999");
+$("#cnpjprop").mask("99.999.999/9999-99");
+
+$('#senhareg, #senhaconf').on('keyup', function () {
+  if ($('#senhaconf').val() == $('#senhareg').val()) {
+    $('#confirmation').html('Senhas ok').css('color', 'green');
+  } else 
+    $('#confirmation').html('As senhas não conferem').css('color', 'red');
+});
+
+
+});
+</script>

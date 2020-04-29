@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset = "utf-8">
+	<title>Projeto Orientado | Contato</title>
+  <link rel = "icon" href =  
+"img/unii.png" type = "image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="css/nes.css">
+	<link rel="stylesheet" type="text/css" href="css/padrao.css">
+<!--<audio autoplay>
+<source src="sounds/University.mp3" type="audio/mpeg">
+</audio>-->
+</head>
+<body class="corpasso">
+
+
+
+ <ul class="menu">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="manoel.html">Manoel Vitor da Silva</a></li>
+  <li><a href="roberto.html">Roberto Henrique dos Santos</a></li>
+  <li><a href="tabeladecurio.html">Tabela de Curiosidades</a></li>
+  <li><a href="sites.html">Sites favoritos</a></li>
+  <li><a href="contato.html">Contato</a></li>
+</ul> 
+<div class="container">
+<div class="posicionar">
+<form>
+  Nome:<br>
+  <input type="text" name="usuario" id="usuario"><br>
+  Sobrenome:<br>
+  <input type="text" name="sobrenome" id="sobrenome"><br>
+  Endereço:<br>
+  <input type="text" name="end" id="end"><br>
+  Estado:<br>
+  <select id="estado" name="estado">
+    <option value="AC">Acre</option>
+    <option value="AL">Alagoas</option>
+    <option value="AP">Amapá</option>
+    <option value="AM">Amazonas</option>
+    <option value="BA">Bahia</option>
+    <option value="CE">Ceará</option>
+    <option value="DF">Distrito Federal</option>
+    <option value="ES">Espírito Santo</option>
+    <option value="GO">Goiás</option>
+    <option value="MA">Maranhão</option>
+    <option value="MT">Mato Grosso</option>
+    <option value="MS">Mato Grosso do Sul</option>
+    <option value="MG">Minas Gerais</option>
+    <option value="PA">Pará</option>
+    <option value="PB">Paraíba</option>
+    <option value="PR">Paraná</option>
+    <option value="PE">Pernambuco</option>
+    <option value="PI">Piauí</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <option value="RN">Rio Grande do Norte</option>
+    <option value="RS">Rio Grande do Sul</option>
+    <option value="RO">Rondônia</option>
+    <option value="RR">Roraima</option>
+    <option value="SC">Santa Catarina</option>
+    <option value="SP">São Paulo</option>
+    <option value="SE">Sergipe</option>
+    <option value="TO">Tocantins</option>
+    <option value="EX">Estrangeiro</option>
+</select><br>
+  Cep:<br>
+  <input type="text" name="cep" id="cep"><br>
+  Telefone:<br>
+  <input type="text" name="tele" id="tele"><br>
+  Celular:<br>
+  <input type="text" name="cel" id="cel"><br>
+  Email:<br>
+  <input type="text" name="email" id="email"><br>
+  Mensagem:<br>
+  <textarea rows="4" cols="20" name="campotext" id="campotext"></textarea><br>
+  <input type="submit" value="Enviar" class="nes-btn">
+  <input type="reset" value="Limpar Campos" class="nes-btn">
+</form>
+</div>
+</div>
+
+
+
+
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.maskedinput.js"></script>
+
+
+<script>
+$(function(){
+    $('#usuario').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+    $('#senha').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+    $('#codigod').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^0-9]/g,'') ); }
+);
+    $('#fantasial').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+
+     $('#propriet').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+    $('#usuarionome').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z]/g,'') ); }
+);
+
+     $('#senhareg').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+    $('#senhaconf').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z A-Z 0-9]/g,'') ); }
+);
+
+$('#tele').mask("(99) 9999-9999");
+$('#cel').mask("(99) 99999-9999");
+
+$('#senhareg, #senhaconf').on('keyup', function () {
+  if ($('#senhaconf').val() == $('#senhareg').val()) {
+    $('#confirmation').html('Senhas ok').css('color', 'green');
+  } else 
+    $('#confirmation').html('As senhas não conferem').css('color', 'red');
+});
+});
+</script>
+
+
+
+</body>
+</html>
